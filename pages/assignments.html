@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Assignments - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Assignments - Rajasthan Virtual Shiksha</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/assignments.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Assignments</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">🧑‍🎓</div>
+                    <span class="user-name">Student Name</span>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">My Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li>
+                        <a href="student-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="live-class.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Live Classes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="recorded-classes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Recorded Classes</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="assignments.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Assignments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quizzes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <span>Quizzes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="discussion.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <span>Discussion Forum</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="downloads.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            <span>Downloads</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+                
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+        
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>Assignments</h2>
+                    <p>Complete your assignments and track your progress</p>
+                </div>
+                <div class="assignment-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Submitted</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Graded</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="filters-section">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All Assignments</button>
+                    <button class="filter-tab" data-filter="pending">Pending</button>
+                    <button class="filter-tab" data-filter="submitted">Submitted</button>
+                    <button class="filter-tab" data-filter="graded">Graded</button>
+                    <button class="filter-tab" data-filter="overdue">Overdue</button>
+                </div>
+                <div class="filter-dropdown">
+                    <select id="subject-filter">
+                        <option value="all">All Subjects</option>
+                        <option value="digital-electronics">Digital Electronics</option>
+                        <option value="computer-networks">Computer Networks</option>
+                        <option value="database-management">Database Management</option>
+                        <option value="programming">Programming</option>
+                    </select>
+                </div>
+            </section>
+            
+            <section class="assignments-list">
+                <div class="assignment-card urgent" data-subject="computer-networks" data-status="pending">
+                    <div class="assignment-header">
+                        <div class="assignment-priority">
+                            <span class="priority-badge urgent">Urgent</span>
+                        </div>
+                        <div class="assignment-subject">Computer Networks</div>
+                    </div>
+                    <div class="assignment-content">
+                        <h3>Network Topology Design</h3>
+                        <p class="assignment-description">Design a network topology for a small office with 50 computers. Include detailed diagrams and justify your design choices.</p>
+                        <div class="assignment-details">
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>Due: Oct 25, 2025 (2 days left)</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user width="16" height="16"></user></svg>
+                                <span>Prof. Gupta</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><star width="16" height="16"></star></svg>
+                                <span>50 points</span>
+                            </div>
+                        </div>
+                        <div class="assignment-attachments">
+                            <h4>Resources:</h4>
+                            <div class="attachment-list">
+                                <a href="#" class="attachment-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                    Assignment Guidelines.pdf
+                                </a>
+                                <a href="#" class="attachment-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                    Sample Topology.pdf
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-actions">
+                        <button class="btn btn-primary start-assignment" data-assignment-id="1">Start Assignment</button>
+                        <button class="btn btn-icon bookmark-btn" title="Bookmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="assignment-card" data-subject="database-management" data-status="pending">
+                    <div class="assignment-header">
+                        <div class="assignment-priority">
+                            <span class="priority-badge medium">Medium</span>
+                        </div>
+                        <div class="assignment-subject">Database Management</div>
+                    </div>
+                    <div class="assignment-content">
+                        <h3>Database Schema Design</h3>
+                        <p class="assignment-description">Create a normalized database schema for a library management system. Include ER diagrams and SQL table creation scripts.</p>
+                        <div class="assignment-details">
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>Due: Nov 5, 2025 (12 days left)</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user width="16" height="16"></user></svg>
+                                <span>Prof. Verma</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><star width="16" height="16"></star></svg>
+                                <span>75 points</span>
+                            </div>
+                        </div>
+                        <div class="assignment-attachments">
+                            <h4>Resources:</h4>
+                            <div class="attachment-list">
+                                <a href="#" class="attachment-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                    ER Diagram Template.pdf
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-actions">
+                        <button class="btn btn-primary start-assignment" data-assignment-id="2">Start Assignment</button>
+                        <button class="btn btn-icon bookmark-btn" title="Bookmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="assignment-card submitted" data-subject="digital-electronics" data-status="submitted">
+                    <div class="assignment-header">
+                        <div class="assignment-priority">
+                            <span class="priority-badge low">Low</span>
+                        </div>
+                        <div class="assignment-subject">Digital Electronics</div>
+                        <div class="status-badge submitted">Submitted</div>
+                    </div>
+                    <div class="assignment-content">
+                        <h3>Logic Gate Implementation</h3>
+                        <p class="assignment-description">Implement basic logic gates using transistors and create truth tables for each gate type.</p>
+                        <div class="assignment-details">
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><check-circle width="16" height="16"></check-circle></svg>
+                                <span>Submitted on: Oct 20, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user width="16" height="16"></user></svg>
+                                <span>Prof. Sharma</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><star width="16" height="16"></star></svg>
+                                <span>40 points</span>
+                            </div>
+                        </div>
+                        <div class="submission-info">
+                            <h4>Your Submission:</h4>
+                            <div class="submission-files">
+                                <div class="file-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                    Logic_Gates_Report.pdf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-actions">
+                        <button class="btn btn-secondary view-submission" data-assignment-id="3">View Submission</button>
+                        <span class="status-text">Awaiting Grade</span>
+                    </div>
+                </div>
+                
+                <div class="assignment-card graded" data-subject="programming" data-status="graded">
+                    <div class="assignment-header">
+                        <div class="assignment-priority">
+                            <span class="priority-badge medium">Medium</span>
+                        </div>
+                        <div class="assignment-subject">Programming</div>
+                        <div class="status-badge graded">Graded</div>
+                        <div class="grade-badge">85/100</div>
+                    </div>
+                    <div class="assignment-content">
+                        <h3>Object-Oriented Programming Project</h3>
+                        <p class="assignment-description">Develop a student management system using object-oriented programming principles in Java.</p>
+                        <div class="assignment-details">
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><check-circle width="16" height="16"></check-circle></svg>
+                                <span>Graded on: Oct 18, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user width="16" height="16"></user></svg>
+                                <span>Prof. Kumar</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><star width="16" height="16"></star></svg>
+                                <span>100 points</span>
+                            </div>
+                        </div>
+                        <div class="feedback-section">
+                            <h4>Instructor Feedback:</h4>
+                            <div class="feedback-content">
+                                <p>"Good implementation of OOP concepts. The code structure is clean and well-documented. Minor improvements needed in error handling."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-actions">
+                        <button class="btn btn-secondary view-feedback" data-assignment-id="4">View Detailed Feedback</button>
+                        <span class="grade-text">Grade: B+</span>
+                    </div>
+                </div>
+                
+                <div class="assignment-card overdue" data-subject="digital-electronics" data-status="overdue">
+                    <div class="assignment-header">
+                        <div class="assignment-priority">
+                            <span class="priority-badge high">High</span>
+                        </div>
+                        <div class="assignment-subject">Digital Electronics</div>
+                        <div class="status-badge overdue">Overdue</div>
+                    </div>
+                    <div class="assignment-content">
+                        <h3>Sequential Circuit Design</h3>
+                        <p class="assignment-description">Design and simulate a sequential circuit using flip-flops. Provide timing diagrams and state transition tables.</p>
+                        <div class="assignment-details">
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><alert-triangle width="16" height="16"></alert-triangle></svg>
+                                <span>Overdue by 3 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user width="16" height="16"></user></svg>
+                                <span>Prof. Sharma</span>
+                            </div>
+                            <div class="detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><star width="16" height="16"></star></svg>
+                                <span>60 points (Late penalty applied)</span>
+                            </div>
+                        </div>
+                        <div class="late-submission-notice">
+                            <p><strong>Note:</strong> Late submissions will receive a 10% penalty per day.</p>
+                        </div>
+                    </div>
+                    <div class="assignment-actions">
+                        <button class="btn btn-warning start-assignment" data-assignment-id="5">Submit Late</button>
+                        <span class="penalty-text">-30% penalty</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Assignment Modal -->
+    <div class="assignment-modal" id="assignment-modal">
+        <div class="assignment-modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Assignment Title</h3>
+                <button class="close-modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="assignment-form">
+                    <div class="form-group">
+                        <label for="assignment-text">Assignment Text:</label>
+                        <textarea id="assignment-text" placeholder="Enter your assignment text here..." rows="8"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="assignment-files">Upload Files:</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="assignment-files" multiple accept=".pdf,.doc,.docx,.txt,.jpg,.png">
+                            <div class="upload-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                <p>Click to upload files or drag and drop</p>
+                                <p class="file-types">PDF, DOC, DOCX, TXT, JPG, PNG (Max 10MB each)</p>
+                            </div>
+                        </div>
+                        <div class="uploaded-files" id="uploaded-files"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-secondary save-draft">Save as Draft</button>
+                        <button class="btn btn-primary submit-assignment">Submit Assignment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/assignments.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

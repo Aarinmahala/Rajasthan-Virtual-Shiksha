@@ -1,0 +1,127 @@
+/* Themes CSS for Rajasthan Virtual Shiksha PWA */
+
+/* Light Theme (Default) */
+body.light-theme {
+    --background-color: #FFFFFF;
+    --text-color: #333333;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #666666;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --background-color: #121212;
+    --text-color: #f0f0f0;
+    --light-gray: #222;
+    --medium-gray: #333;
+    --dark-gray: #aaa;
+}
+
+body.dark-theme .main-header {
+    background-color: #1a1a1a;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .nav-links a {
+    color: #f0f0f0;
+}
+
+body.dark-theme .nav-links a:hover,
+body.dark-theme .nav-links a.active {
+    background-color: rgba(255, 107, 53, 0.2);
+}
+
+body.dark-theme .hamburger-menu span {
+    background-color: #f0f0f0;
+}
+
+body.dark-theme .feature-card {
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+body.dark-theme .hero-section {
+    background: linear-gradient(135deg, rgba(255,107,53,0.15) 0%, rgba(2,138,15,0.15) 100%);
+}
+
+/* High Contrast Theme */
+body.high-contrast-theme {
+    --primary-color: #FF0000;
+    --secondary-color: #00FF00;
+    --accent-color: #0000FF;
+    --background-color: #000000;
+    --text-color: #FFFFFF;
+    --light-gray: #222;
+    --medium-gray: #444;
+    --dark-gray: #CCC;
+}
+
+body.high-contrast-theme .main-header {
+    background-color: #000;
+    border-bottom: 2px solid #FFF;
+}
+
+body.high-contrast-theme .nav-links a {
+    color: #FFF;
+}
+
+body.high-contrast-theme .nav-links a:hover,
+body.high-contrast-theme .nav-links a.active {
+    background-color: #FFF;
+    color: #000;
+}
+
+body.high-contrast-theme .feature-card {
+    background-color: #000;
+    border: 2px solid #FFF;
+}
+
+body.high-contrast-theme .btn {
+    border: 2px solid #FFF;
+}
+
+/* Font Size Themes */
+body.font-size-large {
+    font-size: 18px;
+}
+
+body.font-size-x-large {
+    font-size: 20px;
+}
+
+body.font-size-xx-large {
+    font-size: 22px;
+}
+
+/* RTL Support for Hindi */
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+body.rtl .logo-container,
+body.rtl .nav-links,
+body.rtl .cta-buttons,
+body.rtl .social-links {
+    flex-direction: row-reverse;
+}
+
+body.rtl .section-title::after {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .feature-card:hover {
+        transform: none;
+    }
+}
+

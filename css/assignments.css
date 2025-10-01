@@ -1,0 +1,519 @@
+/**
+ * Assignments page styles for Rajasthan Virtual Shiksha PWA
+ */
+
+/* Assignment Stats */
+.assignment-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Assignment Cards */
+.assignments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.assignment-card {
+    background-color: white;
+    border-radius: 12px;
+    border-left: 4px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.assignment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-card.urgent {
+    border-left-color: #F44336;
+}
+
+.assignment-card.submitted {
+    border-left-color: #4CAF50;
+}
+
+.assignment-card.graded {
+    border-left-color: #2196F3;
+}
+
+.assignment-card.overdue {
+    border-left-color: #FF9800;
+    background-color: #FFF8E1;
+}
+
+.assignment-header {
+    padding: 15px 20px;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.assignment-priority {
+    display: flex;
+    align-items: center;
+}
+
+.priority-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.priority-badge.urgent {
+    background-color: #FFEBEE;
+    color: #C62828;
+}
+
+.priority-badge.high {
+    background-color: #FFF3E0;
+    color: #E65100;
+}
+
+.priority-badge.medium {
+    background-color: #E8F5E8;
+    color: #2E7D32;
+}
+
+.priority-badge.low {
+    background-color: #E3F2FD;
+    color: #1565C0;
+}
+
+.assignment-subject {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.submitted {
+    background-color: #E8F5E8;
+    color: #2E7D32;
+}
+
+.status-badge.graded {
+    background-color: #E3F2FD;
+    color: #1565C0;
+}
+
+.status-badge.overdue {
+    background-color: #FFF3E0;
+    color: #E65100;
+}
+
+.grade-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.assignment-content {
+    padding: 20px;
+}
+
+.assignment-content h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.assignment-description {
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.assignment-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.detail-item svg {
+    color: var(--primary-color);
+}
+
+.assignment-attachments,
+.submission-info,
+.feedback-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.assignment-attachments h4,
+.submission-info h4,
+.feedback-section h4 {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.attachment-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.attachment-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.attachment-item:hover {
+    background-color: var(--border-color);
+}
+
+.submission-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #E8F5E8;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #2E7D32;
+}
+
+.feedback-content {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.feedback-content p {
+    margin: 0;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.late-submission-notice {
+    background-color: #FFF3E0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 3px solid #FF9800;
+}
+
+.late-submission-notice p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #E65100;
+}
+
+.assignment-actions {
+    padding: 15px 20px;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.grade-text {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.penalty-text {
+    font-size: 0.85rem;
+    color: #E65100;
+    font-weight: 500;
+}
+
+/* Assignment Modal */
+.assignment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.assignment-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.assignment-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close-modal-btn:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.assignment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.file-upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.file-upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.upload-placeholder svg {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.upload-placeholder p {
+    margin: 0 0 5px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.file-types {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.uploaded-files {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.uploaded-file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.file-size {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.remove-file:hover {
+    background-color: var(--border-color);
+    color: #F44336;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .assignment-stats {
+        justify-content: space-around;
+    }
+    
+    .assignment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .assignment-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .assignment-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .assignment-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .assignment-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .attachment-list,
+    .submission-files {
+        flex-direction: column;
+    }
+}

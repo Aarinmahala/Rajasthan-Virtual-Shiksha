@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create Quiz - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Create Quiz - Rajasthan Virtual Shiksha</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/create-quiz.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Create Quiz</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">👨‍🏫</div>
+                    <span class="user-name">Prof. Kumar</span>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">My Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li>
+                        <a href="teacher-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-class.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Create Class</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="class-recordings.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Recordings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-assignment.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Assignments</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="create-quiz.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <span>Create Quiz</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="discussion-forum.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <span>Discussion</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="student-progress.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                            <span>Student Progress</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+                
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+        
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>Create New Quiz</h2>
+                    <p>Design interactive quizzes to assess student understanding</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary" id="save-draft">Save as Draft</button>
+                    <button class="btn btn-primary" id="preview-quiz">Preview Quiz</button>
+                </div>
+            </section>
+            
+            <div class="quiz-creation-container">
+                <div class="quiz-form-section">
+                    <form id="quiz-form" class="quiz-form">
+                        <div class="form-section">
+                            <h3>Quiz Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="quiz-title">Quiz Title *</label>
+                                    <input type="text" id="quiz-title" name="title" required placeholder="Enter quiz title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="quiz-subject">Subject *</label>
+                                    <select id="quiz-subject" name="subject" required>
+                                        <option value="">Select Subject</option>
+                                        <option value="digital-electronics">Digital Electronics</option>
+                                        <option value="computer-networks">Computer Networks</option>
+                                        <option value="database-management">Database Management</option>
+                                        <option value="programming">Programming</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quiz-difficulty">Difficulty Level</label>
+                                    <select id="quiz-difficulty" name="difficulty">
+                                        <option value="easy">Easy</option>
+                                        <option value="medium" selected>Medium</option>
+                                        <option value="hard">Hard</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quiz-duration">Time Limit (minutes)</label>
+                                    <input type="number" id="quiz-duration" name="duration" min="1" max="180" value="30">
+                                </div>
+                                <div class="form-group">
+                                    <label for="quiz-points">Total Points</label>
+                                    <input type="number" id="quiz-points" name="points" min="1" value="100">
+                                </div>
+                                <div class="form-group">
+                                    <label for="quiz-attempts">Max Attempts</label>
+                                    <select id="quiz-attempts" name="attempts">
+                                        <option value="1">1 Attempt</option>
+                                        <option value="2">2 Attempts</option>
+                                        <option value="3">3 Attempts</option>
+                                        <option value="unlimited">Unlimited</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="quiz-description">Description</label>
+                                <textarea id="quiz-description" name="description" rows="3" placeholder="Brief description of the quiz content and objectives"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Quiz Settings</h3>
+                            <div class="settings-grid">
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="randomize-questions" checked>
+                                        <span class="checkmark"></span>
+                                        Randomize Question Order
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="show-results">
+                                        <span class="checkmark"></span>
+                                        Show Results Immediately
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="allow-review" checked>
+                                        <span class="checkmark"></span>
+                                        Allow Answer Review
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="require-password">
+                                        <span class="checkmark"></span>
+                                        Require Password
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="password-field" style="display: none;">
+                                <label for="quiz-password">Quiz Password</label>
+                                <input type="text" id="quiz-password" name="password" placeholder="Enter quiz password">
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Availability</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="available-from">Available From</label>
+                                    <input type="datetime-local" id="available-from" name="availableFrom">
+                                </div>
+                                <div class="form-group">
+                                    <label for="available-until">Available Until</label>
+                                    <input type="datetime-local" id="available-until" name="availableUntil">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="questions-section">
+                    <div class="questions-header">
+                        <h3>Questions</h3>
+                        <div class="question-actions">
+                            <button class="btn btn-outline add-question" data-type="multiple-choice">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                Multiple Choice
+                            </button>
+                            <button class="btn btn-outline add-question" data-type="true-false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><check-square width="16" height="16"></check-square></svg>
+                                True/False
+                            </button>
+                            <button class="btn btn-outline add-question" data-type="short-answer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><edit-3 width="16" height="16"></edit-3></svg>
+                                Short Answer
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="questions-list" id="questions-list">
+                        <!-- Questions will be added here dynamically -->
+                    </div>
+                    
+                    <div class="questions-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Total Questions:</span>
+                            <span class="summary-value" id="total-questions">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Estimated Time:</span>
+                            <span class="summary-value" id="estimated-time">0 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button class="btn btn-secondary" id="cancel-quiz">Cancel</button>
+                <button class="btn btn-outline" id="save-draft-final">Save as Draft</button>
+                <button class="btn btn-primary" id="publish-quiz">Publish Quiz</button>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Question Template (Hidden) -->
+    <template id="multiple-choice-template">
+        <div class="question-card" data-type="multiple-choice">
+            <div class="question-header">
+                <div class="question-number">Question <span class="q-num">1</span></div>
+                <div class="question-type-badge">Multiple Choice</div>
+                <div class="question-controls">
+                    <button class="btn btn-icon move-up" title="Move Up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-up width="16" height="16"></chevron-up></svg>
+                    </button>
+                    <button class="btn btn-icon move-down" title="Move Down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-down width="16" height="16"></chevron-down></svg>
+                    </button>
+                    <button class="btn btn-icon duplicate-question" title="Duplicate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><copy width="16" height="16"></copy></svg>
+                    </button>
+                    <button class="btn btn-icon delete-question" title="Delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><trash-2 width="16" height="16"></trash-2></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="form-group">
+                    <label>Question Text *</label>
+                    <textarea class="question-text" placeholder="Enter your question here..." rows="3" required></textarea>
+                </div>
+                <div class="options-container">
+                    <label>Answer Options *</label>
+                    <div class="options-list">
+                        <div class="option-item">
+                            <label class="radio-label">
+                                <input type="radio" name="correct-answer" value="0">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <input type="text" class="option-text" placeholder="Option A" required>
+                            <button class="btn btn-icon remove-option" title="Remove Option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="16" height="16"></x></svg>
+                            </button>
+                        </div>
+                        <div class="option-item">
+                            <label class="radio-label">
+                                <input type="radio" name="correct-answer" value="1">
+                                <span class="radio-mark"></span>
+                            </label>
+                            <input type="text" class="option-text" placeholder="Option B" required>
+                            <button class="btn btn-icon remove-option" title="Remove Option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="16" height="16"></x></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline add-option">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><plus width="16" height="16"></plus></svg>
+                        Add Option
+                    </button>
+                </div>
+                <div class="question-settings">
+                    <div class="form-group">
+                        <label for="question-points">Points</label>
+                        <input type="number" class="question-points" min="1" value="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="question-explanation">Explanation (Optional)</label>
+                        <textarea class="question-explanation" placeholder="Explain why this is the correct answer..." rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="true-false-template">
+        <div class="question-card" data-type="true-false">
+            <div class="question-header">
+                <div class="question-number">Question <span class="q-num">1</span></div>
+                <div class="question-type-badge">True/False</div>
+                <div class="question-controls">
+                    <button class="btn btn-icon move-up" title="Move Up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-up width="16" height="16"></chevron-up></svg>
+                    </button>
+                    <button class="btn btn-icon move-down" title="Move Down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-down width="16" height="16"></chevron-down></svg>
+                    </button>
+                    <button class="btn btn-icon duplicate-question" title="Duplicate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><copy width="16" height="16"></copy></svg>
+                    </button>
+                    <button class="btn btn-icon delete-question" title="Delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><trash-2 width="16" height="16"></trash-2></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="form-group">
+                    <label>Question Text *</label>
+                    <textarea class="question-text" placeholder="Enter your true/false statement here..." rows="3" required></textarea>
+                </div>
+                <div class="true-false-options">
+                    <label>Correct Answer *</label>
+                    <div class="tf-options">
+                        <label class="radio-label">
+                            <input type="radio" name="tf-answer" value="true" required>
+                            <span class="radio-mark"></span>
+                            True
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tf-answer" value="false" required>
+                            <span class="radio-mark"></span>
+                            False
+                        </label>
+                    </div>
+                </div>
+                <div class="question-settings">
+                    <div class="form-group">
+                        <label for="question-points">Points</label>
+                        <input type="number" class="question-points" min="1" value="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="question-explanation">Explanation (Optional)</label>
+                        <textarea class="question-explanation" placeholder="Explain why this is the correct answer..." rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="short-answer-template">
+        <div class="question-card" data-type="short-answer">
+            <div class="question-header">
+                <div class="question-number">Question <span class="q-num">1</span></div>
+                <div class="question-type-badge">Short Answer</div>
+                <div class="question-controls">
+                    <button class="btn btn-icon move-up" title="Move Up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-up width="16" height="16"></chevron-up></svg>
+                    </button>
+                    <button class="btn btn-icon move-down" title="Move Down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-down width="16" height="16"></chevron-down></svg>
+                    </button>
+                    <button class="btn btn-icon duplicate-question" title="Duplicate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><copy width="16" height="16"></copy></svg>
+                    </button>
+                    <button class="btn btn-icon delete-question" title="Delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><trash-2 width="16" height="16"></trash-2></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="form-group">
+                    <label>Question Text *</label>
+                    <textarea class="question-text" placeholder="Enter your question here..." rows="3" required></textarea>
+                </div>
+                <div class="answer-settings">
+                    <div class="form-group">
+                        <label>Expected Answer(s)</label>
+                        <div class="answer-keywords">
+                            <input type="text" class="answer-keyword" placeholder="Enter possible correct answers (comma-separated)">
+                            <small>Students' answers will be matched against these keywords</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-settings">
+                    <div class="form-group">
+                        <label for="question-points">Points</label>
+                        <input type="number" class="question-points" min="1" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="question-explanation">Sample Answer (Optional)</label>
+                        <textarea class="question-explanation" placeholder="Provide a sample correct answer..." rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/create-quiz.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

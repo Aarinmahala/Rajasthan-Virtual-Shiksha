@@ -1,0 +1,708 @@
+/**
+ * Student Progress page styles for Rajasthan Virtual Shiksha PWA
+ */
+
+/* Class Stats */
+.class-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Progress Filters */
+.progress-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-controls select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.9rem;
+}
+
+.search-container {
+    position: relative;
+}
+
+#search-students {
+    padding: 8px 35px 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    min-width: 200px;
+}
+
+.search-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.export-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.export-csv,
+.export-pdf {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+}
+
+/* Students Grid */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.student-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 4px solid var(--border-color);
+    position: relative;
+}
+
+.student-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-card.excellent {
+    border-left-color: #4CAF50;
+}
+
+.student-card.good {
+    border-left-color: #2196F3;
+}
+
+.student-card.average {
+    border-left-color: #FF9800;
+}
+
+.student-card.needs-attention {
+    border-left-color: #F44336;
+    background-color: #FFEBEE;
+}
+
+/* Student Header */
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.student-avatar {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+}
+
+.student-avatar.large {
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+}
+
+.student-details h3 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.student-id,
+.student-email {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.overall-grade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80px;
+}
+
+.grade-letter {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.grade-percentage {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.overall-grade.excellent .grade-letter {
+    color: #4CAF50;
+}
+
+.overall-grade.good .grade-letter {
+    color: #2196F3;
+}
+
+.overall-grade.average .grade-letter {
+    color: #FF9800;
+}
+
+.overall-grade.needs-improvement .grade-letter {
+    color: #F44336;
+}
+
+.attention-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #F44336;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* Student Metrics */
+.student-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.metric-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+}
+
+.metric-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.metric-icon.attendance {
+    background-color: #4CAF50;
+}
+
+.metric-icon.assignments {
+    background-color: #2196F3;
+}
+
+.metric-icon.quizzes {
+    background-color: #FF9800;
+}
+
+.metric-icon.participation {
+    background-color: #9C27B0;
+}
+
+.metric-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 2px;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Progress Indicators */
+.progress-indicators {
+    margin-bottom: 20px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.progress-label {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    min-width: 120px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: var(--bg-light);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Concern Indicators */
+.concern-indicators {
+    margin-bottom: 15px;
+}
+
+.concern-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: #E65100;
+}
+
+.concern-item svg {
+    color: #FF9800;
+}
+
+/* Recent Activity */
+.recent-activity {
+    margin-bottom: 15px;
+}
+
+.recent-activity h4 {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.activity-list {
+    margin: 0;
+    padding-left: 15px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.activity-list li {
+    margin-bottom: 5px;
+}
+
+/* Student Actions */
+.student-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Student Detail Modal */
+.student-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.student-detail-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.student-detail-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-header-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close-modal-btn:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.detail-tabs {
+    display: flex;
+    gap: 5px;
+    background-color: var(--bg-light);
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.detail-tab {
+    flex: 1;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.detail-tab:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    color: var(--primary-color);
+}
+
+.detail-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Performance Overview */
+.performance-overview {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.performance-chart h4 {
+    margin: 0 0 15px;
+    font-size: 1.1rem;
+}
+
+.chart-placeholder {
+    background-color: var(--bg-light);
+    border-radius: 6px;
+    padding: 20px;
+    height: 200px;
+    position: relative;
+}
+
+.trend-line {
+    position: relative;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.trend-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.strengths-weaknesses {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.strengths,
+.weaknesses {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.strengths h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #4CAF50;
+}
+
+.weaknesses h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #F44336;
+}
+
+.strengths ul,
+.weaknesses ul {
+    margin: 0;
+    padding-left: 15px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.strengths li,
+.weaknesses li {
+    margin-bottom: 5px;
+}
+
+/* Assignment Timeline */
+.assignments-history h4 {
+    margin: 0 0 20px;
+    font-size: 1.1rem;
+}
+
+.assignment-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    width: 2px;
+    height: calc(100% + 15px);
+    background-color: var(--border-color);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.timeline-item.completed .timeline-marker {
+    background-color: #4CAF50;
+}
+
+.timeline-item.late .timeline-marker {
+    background-color: #FF9800;
+}
+
+.timeline-item.pending .timeline-marker {
+    background-color: var(--primary-color);
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-content h5 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.timeline-content p {
+    margin: 0 0 5px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.timeline-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .class-stats {
+        justify-content: space-around;
+    }
+    
+    .progress-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-controls {
+        justify-content: space-between;
+    }
+    
+    .export-actions {
+        justify-content: center;
+    }
+    
+    .students-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .student-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .student-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .student-actions {
+        flex-direction: column;
+    }
+    
+    .performance-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .strengths-weaknesses {
+        flex-direction: row;
+    }
+    
+    .student-detail-content {
+        width: 95%;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .class-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .export-actions {
+        flex-direction: column;
+    }
+    
+    .student-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .strengths-weaknesses {
+        flex-direction: column;
+    }
+    
+    .detail-tabs {
+        flex-direction: column;
+    }
+}

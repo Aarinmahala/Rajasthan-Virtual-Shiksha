@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage Students - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Manage Students - Rajasthan Virtual Shiksha</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/manage-students.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Manage Students</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">👨‍🏫</div>
+                    <span class="user-name">Prof. Kumar</span>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">My Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li>
+                        <a href="teacher-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-class.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Create Class</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="class-recordings.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Recordings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-assignment.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Assignments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-quiz.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <span>Create Quiz</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="discussion-forum.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <span>Discussion</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="student-progress.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                            <span>Student Progress</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="manage-students.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><users width="24" height="24"></users></svg>
+                            <span>Manage Students</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+                
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+        
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>Student Management</h2>
+                    <p>Add, remove, and manage students in your classes</p>
+                </div>
+                <div class="management-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">45</span>
+                        <span class="stat-label">Total Students</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">38</span>
+                        <span class="stat-label">Active</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Inactive</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="management-actions">
+                <div class="action-buttons">
+                    <button class="btn btn-primary add-student-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user-plus width="16" height="16"></user-plus></svg>
+                        Add New Student
+                    </button>
+                    <button class="btn btn-outline bulk-import-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><upload width="16" height="16"></upload></svg>
+                        Bulk Import
+                    </button>
+                    <button class="btn btn-outline export-list-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><download width="16" height="16"></download></svg>
+                        Export List
+                    </button>
+                </div>
+                <div class="search-filter-section">
+                    <div class="search-container">
+                        <input type="text" id="search-students" placeholder="Search students by name, ID, or email...">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><search width="20" height="20"></search></svg>
+                        </button>
+                    </div>
+                    <div class="filter-controls">
+                        <select id="status-filter">
+                            <option value="all">All Students</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="pending">Pending Approval</option>
+                        </select>
+                        <select id="course-filter">
+                            <option value="all">All Courses</option>
+                            <option value="digital-electronics">Digital Electronics</option>
+                            <option value="computer-networks">Computer Networks</option>
+                            <option value="database-management">Database Management</option>
+                            <option value="programming">Programming</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="students-table-section">
+                <div class="table-header">
+                    <div class="bulk-actions">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="select-all-students">
+                            <span class="checkmark"></span>
+                            Select All
+                        </label>
+                        <div class="bulk-action-buttons" id="bulk-action-buttons" style="display: none;">
+                            <button class="btn btn-outline bulk-activate">Activate Selected</button>
+                            <button class="btn btn-outline bulk-deactivate">Deactivate Selected</button>
+                            <button class="btn btn-danger bulk-remove">Remove Selected</button>
+                        </div>
+                    </div>
+                    <div class="table-controls">
+                        <span class="showing-count">Showing 45 of 45 students</span>
+                        <select id="per-page">
+                            <option value="10">10 per page</option>
+                            <option value="25" selected>25 per page</option>
+                            <option value="50">50 per page</option>
+                            <option value="100">100 per page</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="students-table-container">
+                    <table class="students-table">
+                        <thead>
+                            <tr>
+                                <th width="50">
+                                    <input type="checkbox" id="header-checkbox">
+                                </th>
+                                <th width="80">Avatar</th>
+                                <th>Student Details</th>
+                                <th>Enrollment</th>
+                                <th>Performance</th>
+                                <th>Last Active</th>
+                                <th>Status</th>
+                                <th width="120">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="student-row active" data-student-id="1">
+                                <td>
+                                    <input type="checkbox" class="student-checkbox" value="1">
+                                </td>
+                                <td>
+                                    <div class="student-avatar">🧑‍🎓</div>
+                                </td>
+                                <td>
+                                    <div class="student-details">
+                                        <h4>Rahul Sharma</h4>
+                                        <p class="student-id">ID: 2023CS001</p>
+                                        <p class="student-email">rahul.sharma@student.edu</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="enrollment-info">
+                                        <p class="enrollment-date">Enrolled: Aug 15, 2023</p>
+                                        <p class="course-info">Computer Science</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="performance-summary">
+                                        <div class="grade-display excellent">A</div>
+                                        <div class="performance-details">
+                                            <span class="attendance">95% attendance</span>
+                                            <span class="avg-score">92% avg score</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="activity-info">
+                                        <span class="last-seen">2 hours ago</span>
+                                        <span class="activity-status online">Online</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="status-badge active">Active</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-icon view-student" title="View Profile" data-student-id="1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><eye width="16" height="16"></eye></svg>
+                                        </button>
+                                        <button class="btn btn-icon edit-student" title="Edit Student" data-student-id="1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><edit width="16" height="16"></edit></svg>
+                                        </button>
+                                        <div class="action-dropdown">
+                                            <button class="btn btn-icon dropdown-toggle" title="More Actions">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><more-horizontal width="16" height="16"></more-horizontal></svg>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a href="#" class="send-message">Send Message</a>
+                                                <a href="#" class="reset-password">Reset Password</a>
+                                                <a href="#" class="deactivate-student">Deactivate</a>
+                                                <a href="#" class="remove-student">Remove Student</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr class="student-row active" data-student-id="2">
+                                <td>
+                                    <input type="checkbox" class="student-checkbox" value="2">
+                                </td>
+                                <td>
+                                    <div class="student-avatar">👩‍🎓</div>
+                                </td>
+                                <td>
+                                    <div class="student-details">
+                                        <h4>Priya Patel</h4>
+                                        <p class="student-id">ID: 2023CS002</p>
+                                        <p class="student-email">priya.patel@student.edu</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="enrollment-info">
+                                        <p class="enrollment-date">Enrolled: Aug 16, 2023</p>
+                                        <p class="course-info">Computer Science</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="performance-summary">
+                                        <div class="grade-display good">B+</div>
+                                        <div class="performance-details">
+                                            <span class="attendance">88% attendance</span>
+                                            <span class="avg-score">85% avg score</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="activity-info">
+                                        <span class="last-seen">1 day ago</span>
+                                        <span class="activity-status offline">Offline</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="status-badge active">Active</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-icon view-student" title="View Profile" data-student-id="2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><eye width="16" height="16"></eye></svg>
+                                        </button>
+                                        <button class="btn btn-icon edit-student" title="Edit Student" data-student-id="2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><edit width="16" height="16"></edit></svg>
+                                        </button>
+                                        <div class="action-dropdown">
+                                            <button class="btn btn-icon dropdown-toggle" title="More Actions">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><more-horizontal width="16" height="16"></more-horizontal></svg>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a href="#" class="send-message">Send Message</a>
+                                                <a href="#" class="reset-password">Reset Password</a>
+                                                <a href="#" class="deactivate-student">Deactivate</a>
+                                                <a href="#" class="remove-student">Remove Student</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr class="student-row needs-attention" data-student-id="3">
+                                <td>
+                                    <input type="checkbox" class="student-checkbox" value="3">
+                                </td>
+                                <td>
+                                    <div class="student-avatar">🧑‍🎓</div>
+                                </td>
+                                <td>
+                                    <div class="student-details">
+                                        <h4>Amit Kumar</h4>
+                                        <p class="student-id">ID: 2023CS003</p>
+                                        <p class="student-email">amit.kumar@student.edu</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="enrollment-info">
+                                        <p class="enrollment-date">Enrolled: Aug 20, 2023</p>
+                                        <p class="course-info">Computer Science</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="performance-summary">
+                                        <div class="grade-display needs-improvement">C</div>
+                                        <div class="performance-details">
+                                            <span class="attendance">65% attendance</span>
+                                            <span class="avg-score">68% avg score</span>
+                                        </div>
+                                        <div class="warning-indicator">⚠️</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="activity-info">
+                                        <span class="last-seen">3 days ago</span>
+                                        <span class="activity-status away">Away</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="status-badge active">Active</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-icon view-student" title="View Profile" data-student-id="3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><eye width="16" height="16"></eye></svg>
+                                        </button>
+                                        <button class="btn btn-icon edit-student" title="Edit Student" data-student-id="3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><edit width="16" height="16"></edit></svg>
+                                        </button>
+                                        <div class="action-dropdown">
+                                            <button class="btn btn-icon dropdown-toggle" title="More Actions">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><more-horizontal width="16" height="16"></more-horizontal></svg>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a href="#" class="send-message">Send Message</a>
+                                                <a href="#" class="send-reminder">Send Reminder</a>
+                                                <a href="#" class="schedule-meeting">Schedule Meeting</a>
+                                                <a href="#" class="reset-password">Reset Password</a>
+                                                <a href="#" class="deactivate-student">Deactivate</a>
+                                                <a href="#" class="remove-student">Remove Student</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr class="student-row pending" data-student-id="4">
+                                <td>
+                                    <input type="checkbox" class="student-checkbox" value="4">
+                                </td>
+                                <td>
+                                    <div class="student-avatar">👩‍🎓</div>
+                                </td>
+                                <td>
+                                    <div class="student-details">
+                                        <h4>Neha Singh</h4>
+                                        <p class="student-id">ID: 2023CS004</p>
+                                        <p class="student-email">neha.singh@student.edu</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="enrollment-info">
+                                        <p class="enrollment-date">Applied: Oct 20, 2025</p>
+                                        <p class="course-info">Computer Science</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="performance-summary">
+                                        <div class="grade-display pending">-</div>
+                                        <div class="performance-details">
+                                            <span class="attendance">- attendance</span>
+                                            <span class="avg-score">- avg score</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="activity-info">
+                                        <span class="last-seen">Never</span>
+                                        <span class="activity-status offline">Offline</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="status-badge pending">Pending</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-success approve-student" title="Approve" data-student-id="4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><check width="16" height="16"></check></svg>
+                                        </button>
+                                        <button class="btn btn-danger reject-student" title="Reject" data-student-id="4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="16" height="16"></x></svg>
+                                        </button>
+                                        <button class="btn btn-icon view-application" title="View Application" data-student-id="4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><file-text width="16" height="16"></file-text></svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-pagination">
+                    <div class="pagination-info">
+                        <span>Showing 1-25 of 45 students</span>
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="btn btn-icon" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-left width="16" height="16"></chevron-left></svg>
+                        </button>
+                        <span class="page-numbers">
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                        </span>
+                        <button class="btn btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><chevron-right width="16" height="16"></chevron-right></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Add Student Modal -->
+    <div class="add-student-modal" id="add-student-modal">
+        <div class="add-student-content">
+            <div class="modal-header">
+                <h3>Add New Student</h3>
+                <button class="close-modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="24" height="24"></x></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="add-student-form" class="student-form">
+                    <div class="form-section">
+                        <h4>Personal Information</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="student-email">Email *</label>
+                                <input type="email" id="student-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="student-phone">Phone Number</label>
+                                <input type="tel" id="student-phone" name="phone">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Academic Information</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="student-id">Student ID *</label>
+                                <input type="text" id="student-id" name="studentId" required placeholder="e.g., 2023CS005">
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Course *</label>
+                                <select id="course" name="course" required>
+                                    <option value="">Select Course</option>
+                                    <option value="computer-science">Computer Science</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="mechanical">Mechanical</option>
+                                    <option value="civil">Civil</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="semester">Semester</label>
+                                <select id="semester" name="semester">
+                                    <option value="1">1st Semester</option>
+                                    <option value="2">2nd Semester</option>
+                                    <option value="3">3rd Semester</option>
+                                    <option value="4">4th Semester</option>
+                                    <option value="5">5th Semester</option>
+                                    <option value="6">6th Semester</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="batch">Batch Year</label>
+                                <select id="batch" name="batch">
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Account Settings</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="username">Username *</label>
+                                <input type="text" id="username" name="username" required placeholder="Auto-generated from email">
+                            </div>
+                            <div class="form-group">
+                                <label for="temporary-password">Temporary Password *</label>
+                                <input type="password" id="temporary-password" name="password" required>
+                                <button type="button" class="generate-password">Generate</button>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="send-welcome-email" checked>
+                                <span class="checkmark"></span>
+                                Send welcome email with login credentials
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="require-password-change" checked>
+                                <span class="checkmark"></span>
+                                Require password change on first login
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary cancel-add">Cancel</button>
+                        <button type="submit" class="btn btn-primary add-student">Add Student</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bulk Import Modal -->
+    <div class="bulk-import-modal" id="bulk-import-modal">
+        <div class="bulk-import-content">
+            <div class="modal-header">
+                <h3>Bulk Import Students</h3>
+                <button class="close-modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="24" height="24"></x></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="import-steps">
+                    <div class="step-indicator">
+                        <div class="step active">1</div>
+                        <div class="step">2</div>
+                        <div class="step">3</div>
+                    </div>
+                    
+                    <div class="step-content active" id="step-1">
+                        <h4>Step 1: Download Template</h4>
+                        <p>Download our CSV template to ensure proper formatting of student data.</p>
+                        <div class="template-download">
+                            <button class="btn btn-outline download-template">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><download width="16" height="16"></download></svg>
+                                Download CSV Template
+                            </button>
+                        </div>
+                        <div class="template-info">
+                            <h5>Required Fields:</h5>
+                            <ul>
+                                <li>First Name</li>
+                                <li>Last Name</li>
+                                <li>Email</li>
+                                <li>Student ID</li>
+                                <li>Course</li>
+                                <li>Semester</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step-content" id="step-2">
+                        <h4>Step 2: Upload CSV File</h4>
+                        <div class="file-upload-area">
+                            <input type="file" id="csv-file" accept=".csv" style="display: none;">
+                            <div class="upload-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><upload width="48" height="48"></upload></svg>
+                                <p>Upload your CSV file</p>
+                                <p class="file-info">Only CSV files are accepted</p>
+                            </div>
+                        </div>
+                        <div class="validation-results" id="validation-results" style="display: none;">
+                            <h5>Validation Results:</h5>
+                            <div class="validation-summary">
+                                <div class="validation-item success">
+                                    <span class="validation-count">25</span>
+                                    <span class="validation-label">Valid Records</span>
+                                </div>
+                                <div class="validation-item error">
+                                    <span class="validation-count">3</span>
+                                    <span class="validation-label">Errors</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-content" id="step-3">
+                        <h4>Step 3: Review & Import</h4>
+                        <div class="import-summary">
+                            <p>Ready to import <strong>25 students</strong> into your class.</p>
+                            <div class="import-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="send-bulk-welcome" checked>
+                                    <span class="checkmark"></span>
+                                    Send welcome emails to all new students
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="auto-enroll-subjects" checked>
+                                    <span class="checkmark"></span>
+                                    Auto-enroll in default subjects
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-navigation">
+                        <button class="btn btn-secondary prev-step" disabled>Previous</button>
+                        <button class="btn btn-primary next-step">Next</button>
+                        <button class="btn btn-success import-students" style="display: none;">Import Students</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/manage-students.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

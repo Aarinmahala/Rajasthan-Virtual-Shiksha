@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recorded Classes - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Recorded Classes - Rajasthan Virtual Shiksha</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/recorded-classes.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Recorded Classes</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">🧑‍🎓</div>
+                    <span class="user-name">Student Name</span>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">My Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li>
+                        <a href="student-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="live-class.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Live Classes</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="recorded-classes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            <span>Recorded Classes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="assignments.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Assignments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quizzes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <span>Quizzes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="discussion.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <span>Discussion Forum</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="downloads.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            <span>Downloads</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+                
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+        
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>Recorded Classes</h2>
+                    <p>Access your recorded lectures anytime, anywhere</p>
+                </div>
+                <div class="page-actions">
+                    <div class="search-container">
+                        <input type="text" id="search-classes" placeholder="Search classes...">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="filters-section">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All Classes</button>
+                    <button class="filter-tab" data-filter="recent">Recent</button>
+                    <button class="filter-tab" data-filter="watched">Watched</button>
+                    <button class="filter-tab" data-filter="bookmarked">Bookmarked</button>
+                </div>
+                <div class="filter-dropdown">
+                    <select id="subject-filter">
+                        <option value="all">All Subjects</option>
+                        <option value="digital-electronics">Digital Electronics</option>
+                        <option value="computer-networks">Computer Networks</option>
+                        <option value="database-management">Database Management</option>
+                        <option value="programming">Programming</option>
+                    </select>
+                </div>
+            </section>
+            
+            <section class="classes-grid">
+                <div class="class-card" data-subject="digital-electronics" data-status="new">
+                    <div class="class-thumbnail">
+                        <img src="../assets/images/class-thumbnail-1.jpg" alt="Digital Electronics Lecture" onerror="this.src='../assets/images/default-thumbnail.png'">
+                        <div class="play-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="duration-badge">45:30</div>
+                        <div class="quality-badge">HD</div>
+                    </div>
+                    <div class="class-info">
+                        <h3>Introduction to Logic Gates</h3>
+                        <p class="class-subject">Digital Electronics</p>
+                        <p class="class-instructor">Prof. Sharma</p>
+                        <div class="class-meta">
+                            <span class="class-date">Oct 15, 2025</span>
+                            <span class="class-views">245 views</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="progress-text">Not started</p>
+                    </div>
+                    <div class="class-actions">
+                        <button class="btn btn-primary play-btn" data-video-id="1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Watch
+                        </button>
+                        <button class="btn btn-icon bookmark-btn" title="Bookmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                        <button class="btn btn-icon download-btn" title="Download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="class-card" data-subject="computer-networks" data-status="watched">
+                    <div class="class-thumbnail">
+                        <img src="../assets/images/class-thumbnail-2.jpg" alt="Computer Networks Lecture" onerror="this.src='../assets/images/default-thumbnail.png'">
+                        <div class="play-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="duration-badge">38:15</div>
+                        <div class="quality-badge">HD</div>
+                        <div class="watched-badge">✓</div>
+                    </div>
+                    <div class="class-info">
+                        <h3>OSI Model Explained</h3>
+                        <p class="class-subject">Computer Networks</p>
+                        <p class="class-instructor">Prof. Gupta</p>
+                        <div class="class-meta">
+                            <span class="class-date">Oct 12, 2025</span>
+                            <span class="class-views">189 views</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <p class="progress-text">Completed</p>
+                    </div>
+                    <div class="class-actions">
+                        <button class="btn btn-secondary play-btn" data-video-id="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Rewatch
+                        </button>
+                        <button class="btn btn-icon bookmark-btn bookmarked" title="Bookmarked">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                        <button class="btn btn-icon download-btn downloaded" title="Downloaded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="class-card" data-subject="database-management" data-status="in-progress">
+                    <div class="class-thumbnail">
+                        <img src="../assets/images/class-thumbnail-3.jpg" alt="Database Management Lecture" onerror="this.src='../assets/images/default-thumbnail.png'">
+                        <div class="play-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="duration-badge">52:45</div>
+                        <div class="quality-badge">HD</div>
+                    </div>
+                    <div class="class-info">
+                        <h3>Database Normalization</h3>
+                        <p class="class-subject">Database Management</p>
+                        <p class="class-instructor">Prof. Verma</p>
+                        <div class="class-meta">
+                            <span class="class-date">Oct 10, 2025</span>
+                            <span class="class-views">156 views</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <p class="progress-text">65% completed</p>
+                    </div>
+                    <div class="class-actions">
+                        <button class="btn btn-primary play-btn" data-video-id="3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Continue
+                        </button>
+                        <button class="btn btn-icon bookmark-btn" title="Bookmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                        <button class="btn btn-icon download-btn" title="Download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="class-card" data-subject="programming" data-status="new">
+                    <div class="class-thumbnail">
+                        <img src="../assets/images/class-thumbnail-4.jpg" alt="Programming Lecture" onerror="this.src='../assets/images/default-thumbnail.png'">
+                        <div class="play-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="duration-badge">41:20</div>
+                        <div class="quality-badge">HD</div>
+                    </div>
+                    <div class="class-info">
+                        <h3>Object-Oriented Programming</h3>
+                        <p class="class-subject">Programming</p>
+                        <p class="class-instructor">Prof. Kumar</p>
+                        <div class="class-meta">
+                            <span class="class-date">Oct 8, 2025</span>
+                            <span class="class-views">203 views</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="progress-text">Not started</p>
+                    </div>
+                    <div class="class-actions">
+                        <button class="btn btn-primary play-btn" data-video-id="4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Watch
+                        </button>
+                        <button class="btn btn-icon bookmark-btn" title="Bookmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                        <button class="btn btn-icon download-btn" title="Download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="class-card" data-subject="digital-electronics" data-status="new">
+                    <div class="class-thumbnail">
+                        <img src="../assets/images/class-thumbnail-5.jpg" alt="Digital Electronics Lecture" onerror="this.src='../assets/images/default-thumbnail.png'">
+                        <div class="play-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="duration-badge">33:45</div>
+                        <div class="quality-badge">HD</div>
+                    </div>
+                    <div class="class-info">
+                        <h3>Boolean Algebra Fundamentals</h3>
+                        <p class="class-subject">Digital Electronics</p>
+                        <p class="class-instructor">Prof. Sharma</p>
+                        <div class="class-meta">
+                            <span class="class-date">Oct 5, 2025</span>
+                            <span class="class-views">178 views</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="progress-text">Not started</p>
+                    </div>
+                    <div class="class-actions">
+                        <button class="btn btn-primary play-btn" data-video-id="5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Watch
+                        </button>
+                        <button class="btn btn-icon bookmark-btn" title="Bookmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                        <button class="btn btn-icon download-btn" title="Download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="class-card" data-subject="computer-networks" data-status="new">
+                    <div class="class-thumbnail">
+                        <img src="../assets/images/class-thumbnail-6.jpg" alt="Computer Networks Lecture" onerror="this.src='../assets/images/default-thumbnail.png'">
+                        <div class="play-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                        <div class="duration-badge">47:30</div>
+                        <div class="quality-badge">HD</div>
+                    </div>
+                    <div class="class-info">
+                        <h3>TCP/IP Protocol Suite</h3>
+                        <p class="class-subject">Computer Networks</p>
+                        <p class="class-instructor">Prof. Gupta</p>
+                        <div class="class-meta">
+                            <span class="class-date">Oct 3, 2025</span>
+                            <span class="class-views">134 views</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="progress-text">Not started</p>
+                    </div>
+                    <div class="class-actions">
+                        <button class="btn btn-primary play-btn" data-video-id="6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Watch
+                        </button>
+                        <button class="btn btn-icon bookmark-btn" title="Bookmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                        <button class="btn btn-icon download-btn" title="Download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="load-more-section">
+                <button class="btn btn-outline load-more-btn">Load More Classes</button>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Video Player Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="video-modal-content">
+            <div class="video-header">
+                <h3 id="video-title">Class Title</h3>
+                <button class="close-video-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="video-container">
+                <video id="video-player" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-info">
+                <div class="video-details">
+                    <p id="video-instructor">Instructor Name</p>
+                    <p id="video-date">Date</p>
+                </div>
+                <div class="video-actions">
+                    <button class="btn btn-icon speed-btn" title="Playback Speed">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
+                    </button>
+                    <button class="btn btn-icon quality-btn" title="Video Quality">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </button>
+                    <button class="btn btn-icon notes-btn" title="Take Notes">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/recorded-classes.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

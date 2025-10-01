@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add New Institute - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Add New Institute - Rajasthan Virtual Shiksha</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/add-institute.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Add New Institute</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">🧙🏻</div>
+                    <span class="user-name">Admin User</span>
+                    <div class="dropdown-menu">
+                        <a href="admin-profile.html">My Profile</a>
+                        <a href="admin-settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li>
+                        <a href="admin-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><bar-chart-3 width="24" height="24"></bar-chart-3></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="manage-institutes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><building width="24" height="24"></building></svg>
+                            <span>Manage Institutes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-teachers.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user-check width="24" height="24"></user-check></svg>
+                            <span>Manage Teachers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-subadmins.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield width="24" height="24"></shield></svg>
+                            <span>Sub-Admins</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-analytics.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><activity width="24" height="24"></activity></svg>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-settings.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><settings width="24" height="24"></settings></svg>
+                            <span>System Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>Add New Institute</h2>
+                    <p>Register a new educational institute to the platform</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary" id="cancel-institute">Cancel</button>
+                    <button class="btn btn-primary" id="preview-institute">Preview</button>
+                </div>
+            </section>
+
+            <div class="institute-form-container">
+                <form id="institute-form" class="institute-form">
+                    <div class="form-section">
+                        <h3>Institute Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="institute-name">Institute Name *</label>
+                                <input type="text" id="institute-name" name="name" required placeholder="Enter institute name">
+                            </div>
+                            <div class="form-group">
+                                <label for="institute-code">Institute Code *</label>
+                                <input type="text" id="institute-code" name="code" required placeholder="e.g., GPCJ001">
+                            </div>
+                            <div class="form-group">
+                                <label for="institute-type">Institute Type *</label>
+                                <select id="institute-type" name="type" required>
+                                    <option value="">Select Type</option>
+                                    <option value="government">Government</option>
+                                    <option value="private">Private</option>
+                                    <option value="autonomous">Autonomous</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="affiliation">Affiliation</label>
+                                <select id="affiliation" name="affiliation">
+                                    <option value="">Select Affiliation</option>
+                                    <option value="rajasthan-technical-university">Rajasthan Technical University</option>
+                                    <option value="rajasthan-university">Rajasthan University</option>
+                                    <option value="bikaner-technical-university">Bikaner Technical University</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="establishment-year">Establishment Year</label>
+                                <input type="number" id="establishment-year" name="establishmentYear" min="1950" max="2025" value="2020">
+                            </div>
+                            <div class="form-group">
+                                <label for="institute-category">Category</label>
+                                <select id="institute-category" name="category">
+                                    <option value="">Select Category</option>
+                                    <option value="polytechnic">Polytechnic College</option>
+                                    <option value="engineering">Engineering College</option>
+                                    <option value="diploma">Diploma Institute</option>
+                                    <option value="iti">ITI</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="institute-description">Institute Description</label>
+                            <textarea id="institute-description" name="description" rows="3" placeholder="Brief description about the institute..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Location Details</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="institute-address">Address *</label>
+                                <textarea id="institute-address" name="address" required rows="2" placeholder="Complete address of the institute"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="district">District *</label>
+                                <select id="district" name="district" required>
+                                    <option value="">Select District</option>
+                                    <option value="jaipur">Jaipur</option>
+                                    <option value="jodhpur">Jodhpur</option>
+                                    <option value="kota">Kota</option>
+                                    <option value="ajmer">Ajmer</option>
+                                    <option value="bikaner">Bikaner</option>
+                                    <option value="udaipur">Udaipur</option>
+                                    <option value="alwar">Alwar</option>
+                                    <option value="bharatpur">Bharatpur</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pincode">PIN Code *</label>
+                                <input type="text" id="pincode" name="pincode" required pattern="[0-9]{6}" placeholder="123456">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-number">Contact Number *</label>
+                                <input type="tel" id="contact-number" name="contactNumber" required placeholder="+91-12345-67890">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Contact Email *</label>
+                                <input type="email" id="contact-email" name="contactEmail" required placeholder="institute@domain.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Website</label>
+                                <input type="url" id="website" name="website" placeholder="https://institute.edu">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Institute Head</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="principal-name">Principal/Director Name *</label>
+                                <input type="text" id="principal-name" name="principalName" required placeholder="Enter principal name">
+                            </div>
+                            <div class="form-group">
+                                <label for="principal-email">Principal Email *</label>
+                                <input type="email" id="principal-email" name="principalEmail" required placeholder="principal@domain.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="principal-phone">Principal Phone *</label>
+                                <input type="tel" id="principal-phone" name="principalPhone" required placeholder="+91-12345-67890">
+                            </div>
+                            <div class="form-group">
+                                <label for="principal-qualification">Qualification</label>
+                                <input type="text" id="principal-qualification" name="principalQualification" placeholder="e.g., PhD, M.Tech">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Academic Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="total-students">Total Students</label>
+                                <input type="number" id="total-students" name="totalStudents" min="0" value="500">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-teachers">Total Teachers</label>
+                                <input type="number" id="total-teachers" name="totalTeachers" min="0" value="25">
+                            </div>
+                            <div class="form-group">
+                                <label for="courses-offered">Courses Offered</label>
+                                <input type="text" id="courses-offered" name="coursesOffered" placeholder="e.g., Computer Science, Electronics, Mechanical">
+                            </div>
+                            <div class="form-group">
+                                <label for="accreditation">Accreditation</label>
+                                <input type="text" id="accreditation" name="accreditation" placeholder="e.g., AICTE, NBA">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>System Configuration</h3>
+                        <div class="settings-grid">
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="auto-approve-students" checked>
+                                    <span class="checkmark"></span>
+                                    Auto-approve student registrations
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="enable-discussion" checked>
+                                    <span class="checkmark"></span>
+                                    Enable discussion forum
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="enable-live-classes" checked>
+                                    <span class="checkmark"></span>
+                                    Enable live classes
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="enable-recordings" checked>
+                                    <span class="checkmark"></span>
+                                    Enable class recordings
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Initial Administrator</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="admin-name">Administrator Name *</label>
+                                <input type="text" id="admin-name" name="adminName" required placeholder="Enter admin name">
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-email">Administrator Email *</label>
+                                <input type="email" id="admin-email" name="adminEmail" required placeholder="admin@domain.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-phone">Administrator Phone *</label>
+                                <input type="tel" id="admin-phone" name="adminPhone" required placeholder="+91-12345-67890">
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-designation">Designation</label>
+                                <input type="text" id="admin-designation" name="adminDesignation" placeholder="e.g., Registrar, Admin Officer">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-institute">Cancel</button>
+                        <button type="button" class="btn btn-outline" id="save-draft-institute">Save as Draft</button>
+                        <button type="submit" class="btn btn-primary" id="create-institute">Create Institute</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Institute Preview Modal -->
+    <div class="preview-modal" id="preview-modal">
+        <div class="preview-modal-content">
+            <div class="modal-header">
+                <h3>Institute Preview</h3>
+                <button class="close-modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="24" height="24"></x></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="institute-preview">
+                    <div class="preview-header">
+                        <div class="institute-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><building width="48" height="48"></building></svg>
+                        </div>
+                        <div class="institute-info">
+                            <h2 id="preview-institute-name">Institute Name</h2>
+                            <p id="preview-institute-type">Institute Type</p>
+                            <p id="preview-institute-location">Location</p>
+                        </div>
+                    </div>
+
+                    <div class="preview-sections">
+                        <div class="preview-section">
+                            <h4>Institute Details</h4>
+                            <div class="preview-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Code:</span>
+                                    <span class="detail-value" id="preview-code">GPCJ001</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Establishment:</span>
+                                    <span class="detail-value" id="preview-establishment">2020</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Students:</span>
+                                    <span class="detail-value" id="preview-students">500</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Teachers:</span>
+                                    <span class="detail-value" id="preview-teachers">25</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Contact Information</h4>
+                            <div class="preview-contact">
+                                <p id="preview-address">Address</p>
+                                <p id="preview-contact-details">Phone: +91-12345-67890 | Email: institute@domain.com</p>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Administrator</h4>
+                            <div class="preview-admin">
+                                <p id="preview-admin-name">Admin Name</p>
+                                <p id="preview-admin-contact">Email: admin@domain.com | Phone: +91-12345-67890</p>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>System Settings</h4>
+                            <div class="preview-settings">
+                                <div class="setting-item">
+                                    <span class="setting-label">Auto-approve Students:</span>
+                                    <span class="setting-value" id="preview-auto-approve">Yes</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Discussion Forum:</span>
+                                    <span class="setting-value" id="preview-discussion">Enabled</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Live Classes:</span>
+                                    <span class="setting-value" id="preview-live-classes">Enabled</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-actions">
+                    <button class="btn btn-secondary close-preview">Close Preview</button>
+                    <button class="btn btn-primary create-from-preview">Create Institute</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/add-institute.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

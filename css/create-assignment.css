@@ -1,0 +1,516 @@
+/**
+ * Create Assignment page styles for Rajasthan Virtual Shiksha PWA
+ */
+
+/* Assignment Creation Layout */
+.assignment-creation-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+/* Rich Text Editor */
+.rich-text-editor {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.editor-toolbar {
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px;
+    display: flex;
+    gap: 5px;
+}
+
+.toolbar-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.toolbar-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.editor-content {
+    min-height: 150px;
+    padding: 15px;
+    outline: none;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.editor-content:empty::before {
+    content: attr(data-placeholder);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Late Penalty Section */
+.late-penalty-section {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.late-penalty-section h4 {
+    margin: 0 0 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.penalty-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.radio-mark {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.radio-label input[type="radio"]:checked + .radio-mark {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.radio-label input[type="radio"]:checked + .radio-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.penalty-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.penalty-input input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.penalty-unit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Rubric Container */
+.rubric-container {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.rubric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rubric-header h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.add-criterion {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+.rubric-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.rubric-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.rubric-criterion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.criterion-name {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.criterion-points {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.remove-criterion {
+    color: #F44336;
+    padding: 5px;
+}
+
+.criterion-description {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.rubric-total {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Resources Container */
+.resources-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.file-upload-section,
+.external-links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.file-upload-section label,
+.external-links-section label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.file-upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.file-upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.upload-placeholder svg {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.upload-placeholder p {
+    margin: 0 0 5px;
+    color: var(--text-color);
+}
+
+.file-types {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.uploaded-resources {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resource-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+}
+
+.resource-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resource-name {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.resource-size {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.remove-resource {
+    background: none;
+    border: none;
+    color: #F44336;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.remove-resource:hover {
+    background-color: #FFEBEE;
+}
+
+/* External Links */
+.link-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.link-input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.resource-url,
+.resource-title {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.remove-link {
+    color: #F44336;
+    padding: 5px;
+}
+
+.add-link {
+    align-self: flex-start;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+/* Instructions Container */
+.instructions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Notification Settings */
+.notification-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reminder-schedule {
+    margin-left: 20px;
+    padding: 10px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+}
+
+.reminder-schedule label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.reminder-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Preview Modal */
+.preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.preview-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.preview-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.assignment-preview {
+    padding: 20px;
+}
+
+.preview-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.preview-header h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+.preview-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.preview-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.preview-resources,
+.preview-instructions {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+}
+
+.preview-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .resources-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rubric-criterion {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .link-input-group {
+        flex-direction: column;
+    }
+    
+    .penalty-input {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .preview-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .preview-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .reminder-options {
+        gap: 5px;
+    }
+    
+    .preview-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

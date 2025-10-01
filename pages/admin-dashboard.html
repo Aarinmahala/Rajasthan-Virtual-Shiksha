@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Admin Dashboard - Rajasthan Virtual Shiksha</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Admin Dashboard</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">🧙🏻</div>
+                    <span class="user-name">Admin User</span>
+                    <div class="dropdown-menu">
+                        <a href="admin-profile.html">My Profile</a>
+                        <a href="admin-settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active">
+                        <a href="admin-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><bar-chart-3 width="24" height="24"></bar-chart-3></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-institutes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><building width="24" height="24"></building></svg>
+                            <span>Manage Institutes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-teachers.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user-check width="24" height="24"></user-check></svg>
+                            <span>Manage Teachers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-subadmins.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield width="24" height="24"></shield></svg>
+                            <span>Sub-Admins</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-analytics.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><activity width="24" height="24"></activity></svg>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-settings.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><settings width="24" height="24"></settings></svg>
+                            <span>System Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>System Administration</h2>
+                    <p>Manage institutes, teachers, and sub-administrators</p>
+                </div>
+                <div class="system-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Institutes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">45</span>
+                        <span class="stat-label">Teachers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Sub-Admins</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1,200</span>
+                        <span class="stat-label">Students</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-cards">
+                    <div class="action-card">
+                        <div class="action-icon institute">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><building width="48" height="48"></building></svg>
+                        </div>
+                        <div class="action-content">
+                            <h4>Add New Institute</h4>
+                            <p>Register a new educational institute</p>
+                            <a href="add-institute.html" class="btn btn-primary">Add Institute</a>
+                        </div>
+                    </div>
+
+                    <div class="action-card">
+                        <div class="action-icon teacher">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user-plus width="48" height="48"></user-plus></svg>
+                        </div>
+                        <div class="action-content">
+                            <h4>Add New Teacher</h4>
+                            <p>Register a new teacher account</p>
+                            <a href="add-teacher.html" class="btn btn-primary">Add Teacher</a>
+                        </div>
+                    </div>
+
+                    <div class="action-card">
+                        <div class="action-icon admin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield width="48" height="48"></shield></svg>
+                        </div>
+                        <div class="action-content">
+                            <h4>Add Sub-Admin</h4>
+                            <p>Create a new sub-administrator account</p>
+                            <a href="add-subadmin.html" class="btn btn-primary">Add Sub-Admin</a>
+                        </div>
+                    </div>
+
+                    <div class="action-card">
+                        <div class="action-icon analytics">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><activity width="48" height="48"></activity></svg>
+                        </div>
+                        <div class="action-content">
+                            <h4>View Analytics</h4>
+                            <p>System-wide performance metrics</p>
+                            <a href="system-analytics.html" class="btn btn-secondary">View Analytics</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon institute">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><building width="20" height="20"></building></svg>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text">New institute "<strong>Government Polytechnic College, Jaipur</strong>" was added</p>
+                            <p class="activity-time">2 hours ago</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon teacher">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user-check width="20" height="20"></user-check></svg>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text">Teacher "<strong>Prof. Kumar</strong>" account was activated</p>
+                            <p class="activity-time">4 hours ago</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon admin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield width="20" height="20"></shield></svg>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text">Sub-admin "<strong>Sarah Johnson</strong>" was created for Jaipur region</p>
+                            <p class="activity-time">1 day ago</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon system">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><settings width="20" height="20"></settings></svg>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text">System backup completed successfully</p>
+                            <p class="activity-time">2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="system-overview">
+                <div class="overview-cards">
+                    <div class="overview-card">
+                        <div class="card-header">
+                            <h4>Institute Distribution</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><pie-chart width="20" height="20"></pie-chart></svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="distribution-item">
+                                <span class="distribution-label">Government Colleges</span>
+                                <span class="distribution-value">8</span>
+                            </div>
+                            <div class="distribution-item">
+                                <span class="distribution-label">Private Colleges</span>
+                                <span class="distribution-value">4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-header">
+                            <h4>System Health</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><activity width="20" height="20"></activity></svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="health-status">
+                                <div class="health-indicator good">
+                                    <span class="health-dot"></span>
+                                    <span class="health-text">System Online</span>
+                                </div>
+                                <div class="health-indicator good">
+                                    <span class="health-dot"></span>
+                                    <span class="health-text">All Services Active</span>
+                                </div>
+                                <div class="health-indicator good">
+                                    <span class="health-dot"></span>
+                                    <span class="health-text">Database Healthy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="card-header">
+                            <h4>Pending Tasks</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><check-square width="20" height="20"></check-square></svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="task-item">
+                                <span class="task-text">Approve 3 teacher applications</span>
+                                <span class="task-priority high">High</span>
+                            </div>
+                            <div class="task-item">
+                                <span class="task-text">Review system performance report</span>
+                                <span class="task-priority medium">Medium</span>
+                            </div>
+                            <div class="task-item">
+                                <span class="task-text">Update security certificates</span>
+                                <span class="task-priority low">Low</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/admin-dashboard.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add New Teacher - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Add New Teacher - Rajasthan Virtual Shiksha</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/add-teacher.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Add New Teacher</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">🧙🏻</div>
+                    <span class="user-name">Admin User</span>
+                    <div class="dropdown-menu">
+                        <a href="admin-profile.html">My Profile</a>
+                        <a href="admin-settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li>
+                        <a href="admin-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><bar-chart-3 width="24" height="24"></bar-chart-3></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-institutes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><building width="24" height="24"></building></svg>
+                            <span>Manage Institutes</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="manage-teachers.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user-check width="24" height="24"></user-check></svg>
+                            <span>Manage Teachers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-subadmins.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield width="24" height="24"></shield></svg>
+                            <span>Sub-Admins</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-analytics.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><activity width="24" height="24"></activity></svg>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-settings.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><settings width="24" height="24"></settings></svg>
+                            <span>System Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>Add New Teacher</h2>
+                    <p>Create a new teacher account for the platform</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary" id="cancel-teacher">Cancel</button>
+                    <button class="btn btn-primary" id="preview-teacher">Preview</button>
+                </div>
+            </section>
+
+            <div class="teacher-form-container">
+                <form id="teacher-form" class="teacher-form">
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="teacher-title">Title</label>
+                                <select id="teacher-title" name="title">
+                                    <option value="">Select Title</option>
+                                    <option value="Dr.">Dr.</option>
+                                    <option value="Prof.">Prof.</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Ms.">Ms.</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" required placeholder="Enter first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" required placeholder="Enter last name">
+                            </div>
+                            <div class="form-group">
+                                <label for="teacher-email">Email *</label>
+                                <input type="email" id="teacher-email" name="email" required placeholder="teacher@domain.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="teacher-phone">Phone Number *</label>
+                                <input type="tel" id="teacher-phone" name="phone" required placeholder="+91-12345-67890">
+                            </div>
+                            <div class="form-group">
+                                <label for="date-of-birth">Date of Birth</label>
+                                <input type="date" id="date-of-birth" name="dateOfBirth">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Academic Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="employee-id">Employee ID *</label>
+                                <input type="text" id="employee-id" name="employeeId" required placeholder="e.g., EMP001">
+                            </div>
+                            <div class="form-group">
+                                <label for="designation">Designation *</label>
+                                <select id="designation" name="designation" required>
+                                    <option value="">Select Designation</option>
+                                    <option value="professor">Professor</option>
+                                    <option value="associate-professor">Associate Professor</option>
+                                    <option value="assistant-professor">Assistant Professor</option>
+                                    <option value="lecturer">Lecturer</option>
+                                    <option value="instructor">Instructor</option>
+                                    <option value="lab-assistant">Lab Assistant</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="department">Department *</label>
+                                <select id="department" name="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="computer-science">Computer Science</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="mechanical">Mechanical</option>
+                                    <option value="civil">Civil</option>
+                                    <option value="electrical">Electrical</option>
+                                    <option value="information-technology">Information Technology</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="joining-date">Joining Date *</label>
+                                <input type="date" id="joining-date" name="joiningDate" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Educational Qualifications</h3>
+                        <div class="qualifications-section">
+                            <div class="qualification-item">
+                                <div class="form-group">
+                                    <label>Degree</label>
+                                    <select class="qualification-degree" name="qualifications[0][degree]">
+                                        <option value="">Select Degree</option>
+                                        <option value="phd">PhD</option>
+                                        <option value="mtech">M.Tech</option>
+                                        <option value="btech">B.Tech</option>
+                                        <option value="msc">M.Sc</option>
+                                        <option value="bsc">B.Sc</option>
+                                        <option value="mba">MBA</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Specialization</label>
+                                    <input type="text" class="qualification-specialization" name="qualifications[0][specialization]" placeholder="e.g., Computer Science">
+                                </div>
+                                <div class="form-group">
+                                    <label>University</label>
+                                    <input type="text" class="qualification-university" name="qualifications[0][university]" placeholder="e.g., Rajasthan University">
+                                </div>
+                                <div class="form-group">
+                                    <label>Year of Completion</label>
+                                    <input type="number" class="qualification-year" name="qualifications[0][year]" min="1950" max="2025" placeholder="2020">
+                                </div>
+                                <button type="button" class="btn btn-icon remove-qualification" title="Remove Qualification">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="16" height="16"></x></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline add-qualification">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><plus width="16" height="16"></plus></svg>
+                            Add Qualification
+                        </button>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Institute Assignment</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="assigned-institute">Assigned Institute *</label>
+                                <select id="assigned-institute" name="assignedInstitute" required>
+                                    <option value="">Select Institute</option>
+                                    <option value="institute-1">Government Polytechnic College, Jaipur</option>
+                                    <option value="institute-2">Government Polytechnic College, Jodhpur</option>
+                                    <option value="institute-3">Government Polytechnic College, Kota</option>
+                                    <option value="institute-4">Private Engineering College, Ajmer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject-specialization">Subject Specialization</label>
+                                <input type="text" id="subject-specialization" name="subjectSpecialization" placeholder="e.g., Data Structures, Algorithms">
+                            </div>
+                            <div class="form-group">
+                                <label for="experience-years">Years of Experience</label>
+                                <input type="number" id="experience-years" name="experienceYears" min="0" max="50" value="5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Account Settings</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="username">Username *</label>
+                                <input type="text" id="username" name="username" required placeholder="Auto-generated from email">
+                            </div>
+                            <div class="form-group">
+                                <label for="temporary-password">Temporary Password *</label>
+                                <input type="password" id="temporary-password" name="password" required>
+                                <button type="button" class="generate-password">Generate</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-grid">
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="send-welcome-email" checked>
+                                    <span class="checkmark"></span>
+                                    Send welcome email with credentials
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="require-password-change" checked>
+                                    <span class="checkmark"></span>
+                                    Require password change on first login
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="enable-notifications" checked>
+                                    <span class="checkmark"></span>
+                                    Enable email notifications
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="admin-access" checked>
+                                    <span class="checkmark"></span>
+                                    Grant administrative access
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Teaching Preferences</h3>
+                        <div class="preferences-section">
+                            <div class="form-group">
+                                <label for="teaching-subjects">Teaching Subjects</label>
+                                <input type="text" id="teaching-subjects" name="teachingSubjects" placeholder="e.g., Data Structures, Algorithms, Programming">
+                            </div>
+                            <div class="form-group">
+                                <label for="preferred-languages">Preferred Teaching Languages</label>
+                                <div class="language-preferences">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="languages[]" value="english" checked>
+                                        <span class="checkmark"></span>
+                                        English
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="languages[]" value="hindi">
+                                        <span class="checkmark"></span>
+                                        Hindi
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="languages[]" value="rajasthani">
+                                        <span class="checkmark"></span>
+                                        Rajasthani
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="availability">Availability</label>
+                                <textarea id="availability" name="availability" rows="3" placeholder="Available teaching hours, preferred time slots, etc."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-teacher">Cancel</button>
+                        <button type="button" class="btn btn-outline" id="save-draft-teacher">Save as Draft</button>
+                        <button type="submit" class="btn btn-primary" id="create-teacher">Create Teacher Account</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Teacher Preview Modal -->
+    <div class="preview-modal" id="preview-modal">
+        <div class="preview-modal-content">
+            <div class="modal-header">
+                <h3>Teacher Preview</h3>
+                <button class="close-modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="24" height="24"></x></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="teacher-preview">
+                    <div class="preview-header">
+                        <div class="teacher-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user width="48" height="48"></user></svg>
+                        </div>
+                        <div class="teacher-info">
+                            <h2 id="preview-teacher-name">Teacher Name</h2>
+                            <p id="preview-teacher-title">Title</p>
+                            <p id="preview-teacher-designation">Designation</p>
+                        </div>
+                    </div>
+
+                    <div class="preview-sections">
+                        <div class="preview-section">
+                            <h4>Contact Information</h4>
+                            <div class="preview-contact">
+                                <p id="preview-teacher-contact">Email: teacher@domain.com | Phone: +91-12345-67890</p>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Academic Information</h4>
+                            <div class="preview-academic">
+                                <div class="academic-item">
+                                    <span class="academic-label">Employee ID:</span>
+                                    <span class="academic-value" id="preview-employee-id">EMP001</span>
+                                </div>
+                                <div class="academic-item">
+                                    <span class="academic-label">Department:</span>
+                                    <span class="academic-value" id="preview-department">Computer Science</span>
+                                </div>
+                                <div class="academic-item">
+                                    <span class="academic-label">Joining Date:</span>
+                                    <span class="academic-value" id="preview-joining-date">Jan 15, 2023</span>
+                                </div>
+                                <div class="academic-item">
+                                    <span class="academic-label">Experience:</span>
+                                    <span class="academic-value" id="preview-experience">5 years</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Teaching Information</h4>
+                            <div class="preview-teaching">
+                                <div class="teaching-item">
+                                    <span class="teaching-label">Institute:</span>
+                                    <span class="teaching-value" id="preview-institute">Government Polytechnic College</span>
+                                </div>
+                                <div class="teaching-item">
+                                    <span class="teaching-label">Subjects:</span>
+                                    <span class="teaching-value" id="preview-subjects">Data Structures, Algorithms</span>
+                                </div>
+                                <div class="teaching-item">
+                                    <span class="teaching-label">Languages:</span>
+                                    <span class="teaching-value" id="preview-languages">English, Hindi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Account Settings</h4>
+                            <div class="preview-settings">
+                                <div class="setting-item">
+                                    <span class="setting-label">Welcome Email:</span>
+                                    <span class="setting-value" id="preview-welcome-email">Yes</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Password Change Required:</span>
+                                    <span class="setting-value" id="preview-password-change">Yes</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Admin Access:</span>
+                                    <span class="setting-value" id="preview-admin-access">Yes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-actions">
+                    <button class="btn btn-secondary close-preview">Close Preview</button>
+                    <button class="btn btn-primary create-from-preview">Create Teacher Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/add-teacher.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

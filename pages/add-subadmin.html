@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add Sub-Admin - Rajasthan Virtual Shiksha">
+    <meta name="theme-color" content="#FF6B35">
+    <title>Add Sub-Admin - Rajasthan Virtual Shiksha</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/icons/icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/add-subadmin.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="../index.html">
+                    <img src="../assets/images/rajasthan-logo.png" alt="Government of Rajasthan Logo" class="raj-logo">
+                </a>
+                <h1 class="dashboard-title">Add Sub-Admin</h1>
+            </div>
+            <div class="user-controls">
+                <div id="online-status" class="online" title="Online"></div>
+                <div class="user-profile">
+                    <div class="avatar emoji-avatar">🧙🏻</div>
+                    <span class="user-name">Admin User</span>
+                    <div class="dropdown-menu">
+                        <a href="admin-profile.html">My Profile</a>
+                        <a href="admin-settings.html">Settings</a>
+                        <a href="../index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="dashboard-nav">
+                <ul>
+                    <li>
+                        <a href="admin-dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><bar-chart-3 width="24" height="24"></bar-chart-3></svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-institutes.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><building width="24" height="24"></building></svg>
+                            <span>Manage Institutes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-teachers.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><user-check width="24" height="24"></user-check></svg>
+                            <span>Manage Teachers</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="manage-subadmins.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield width="24" height="24"></shield></svg>
+                            <span>Sub-Admins</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-analytics.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><activity width="24" height="24"></activity></svg>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system-settings.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><settings width="24" height="24"></settings></svg>
+                            <span>System Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <select id="theme-switcher" class="theme-switcher">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">System Default</option>
+                </select>
+
+                <select id="language-switcher" class="language-switcher">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <section class="page-header">
+                <div class="page-header-content">
+                    <h2>Add Sub-Administrator</h2>
+                    <p>Create a new sub-admin account with specific permissions</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary" id="cancel-subadmin">Cancel</button>
+                    <button class="btn btn-primary" id="preview-subadmin">Preview</button>
+                </div>
+            </section>
+
+            <div class="subadmin-form-container">
+                <form id="subadmin-form" class="subadmin-form">
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="subadmin-title">Title</label>
+                                <select id="subadmin-title" name="title">
+                                    <option value="">Select Title</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Ms.">Ms.</option>
+                                    <option value="Dr.">Dr.</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" required placeholder="Enter first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" required placeholder="Enter last name">
+                            </div>
+                            <div class="form-group">
+                                <label for="subadmin-email">Email *</label>
+                                <input type="email" id="subadmin-email" name="email" required placeholder="subadmin@domain.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subadmin-phone">Phone Number *</label>
+                                <input type="tel" id="subadmin-phone" name="phone" required placeholder="+91-12345-67890">
+                            </div>
+                            <div class="form-group">
+                                <label for="date-of-birth">Date of Birth</label>
+                                <input type="date" id="date-of-birth" name="dateOfBirth">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Administrative Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="admin-id">Admin ID *</label>
+                                <input type="text" id="admin-id" name="adminId" required placeholder="e.g., SUB001">
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-level">Admin Level *</label>
+                                <select id="admin-level" name="adminLevel" required>
+                                    <option value="">Select Level</option>
+                                    <option value="institute">Institute Level</option>
+                                    <option value="district">District Level</option>
+                                    <option value="regional">Regional Level</option>
+                                    <option value="state">State Level</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="assigned-region">Assigned Region/Area</label>
+                                <select id="assigned-region" name="assignedRegion">
+                                    <option value="">Select Region</option>
+                                    <option value="jaipur-district">Jaipur District</option>
+                                    <option value="jodhpur-district">Jodhpur District</option>
+                                    <option value="kota-district">Kota District</option>
+                                    <option value="ajmer-district">Ajmer District</option>
+                                    <option value="bikaner-district">Bikaner District</option>
+                                    <option value="udaipur-district">Udaipur District</option>
+                                    <option value="alwar-district">Alwar District</option>
+                                    <option value="bharatpur-district">Bharatpur District</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="joining-date">Joining Date *</label>
+                                <input type="date" id="joining-date" name="joiningDate" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Permissions & Access Control</h3>
+                        <div class="permissions-container">
+                            <div class="permissions-grid">
+                                <div class="permission-category">
+                                    <h4>Institute Management</h4>
+                                    <div class="permission-items">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="view-institutes" checked>
+                                            <span class="checkmark"></span>
+                                            View Institutes
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="add-institutes">
+                                            <span class="checkmark"></span>
+                                            Add New Institutes
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="edit-institutes">
+                                            <span class="checkmark"></span>
+                                            Edit Institute Details
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="manage-institute-settings">
+                                            <span class="checkmark"></span>
+                                            Manage Institute Settings
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="permission-category">
+                                    <h4>Teacher Management</h4>
+                                    <div class="permission-items">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="view-teachers" checked>
+                                            <span class="checkmark"></span>
+                                            View Teachers
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="add-teachers">
+                                            <span class="checkmark"></span>
+                                            Add New Teachers
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="approve-teachers">
+                                            <span class="checkmark"></span>
+                                            Approve Teacher Applications
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="manage-teacher-accounts">
+                                            <span class="checkmark"></span>
+                                            Manage Teacher Accounts
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="permission-category">
+                                    <h4>Student Management</h4>
+                                    <div class="permission-items">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="view-students" checked>
+                                            <span class="checkmark"></span>
+                                            View Students
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="manage-student-accounts">
+                                            <span class="checkmark"></span>
+                                            Manage Student Accounts
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="view-student-progress">
+                                            <span class="checkmark"></span>
+                                            View Student Progress
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="moderate-student-content">
+                                            <span class="checkmark"></span>
+                                            Moderate Student Content
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="permission-category">
+                                    <h4>Content Management</h4>
+                                    <div class="permission-items">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="manage-classes">
+                                            <span class="checkmark"></span>
+                                            Manage Classes
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="manage-assignments">
+                                            <span class="checkmark"></span>
+                                            Manage Assignments
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="manage-quizzes">
+                                            <span class="checkmark"></span>
+                                            Manage Quizzes
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="moderate-discussions">
+                                            <span class="checkmark"></span>
+                                            Moderate Discussions
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="permission-category">
+                                    <h4>Analytics & Reports</h4>
+                                    <div class="permission-items">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="view-analytics" checked>
+                                            <span class="checkmark"></span>
+                                            View Analytics
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="generate-reports">
+                                            <span class="checkmark"></span>
+                                            Generate Reports
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="export-data">
+                                            <span class="checkmark"></span>
+                                            Export Data
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="permission-category">
+                                    <h4>System Administration</h4>
+                                    <div class="permission-items">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="manage-subadmins">
+                                            <span class="checkmark"></span>
+                                            Manage Sub-Admins
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="system-settings">
+                                            <span class="checkmark"></span>
+                                            Access System Settings
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="permissions[]" value="system-backup">
+                                            <span class="checkmark"></span>
+                                            System Backup Access
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Account Settings</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="username">Username *</label>
+                                <input type="text" id="username" name="username" required placeholder="Auto-generated from email">
+                            </div>
+                            <div class="form-group">
+                                <label for="temporary-password">Temporary Password *</label>
+                                <input type="password" id="temporary-password" name="password" required>
+                                <button type="button" class="generate-password">Generate</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-grid">
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="send-welcome-email" checked>
+                                    <span class="checkmark"></span>
+                                    Send welcome email with credentials
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="require-password-change" checked>
+                                    <span class="checkmark"></span>
+                                    Require password change on first login
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="enable-notifications" checked>
+                                    <span class="checkmark"></span>
+                                    Enable email notifications
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="two-factor-auth">
+                                    <span class="checkmark"></span>
+                                    Enable two-factor authentication
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Notification Preferences</h3>
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="notify-new-registrations" checked>
+                                    <span class="checkmark"></span>
+                                    New student/institute registrations
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="notify-system-alerts" checked>
+                                    <span class="checkmark"></span>
+                                    System alerts and issues
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="notify-performance" checked>
+                                    <span class="checkmark"></span>
+                                    Performance reports
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="notify-security">
+                                    <span class="checkmark"></span>
+                                    Security notifications
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-subadmin">Cancel</button>
+                        <button type="button" class="btn btn-outline" id="save-draft-subadmin">Save as Draft</button>
+                        <button type="submit" class="btn btn-primary" id="create-subadmin">Create Sub-Admin</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sub-Admin Preview Modal -->
+    <div class="preview-modal" id="preview-modal">
+        <div class="preview-modal-content">
+            <div class="modal-header">
+                <h3>Sub-Admin Preview</h3>
+                <button class="close-modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><x width="24" height="24"></x></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="subadmin-preview">
+                    <div class="preview-header">
+                        <div class="subadmin-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><shield width="48" height="48"></shield></svg>
+                        </div>
+                        <div class="subadmin-info">
+                            <h2 id="preview-subadmin-name">Sub-Admin Name</h2>
+                            <p id="preview-subadmin-title">Title</p>
+                            <p id="preview-subadmin-level">Admin Level</p>
+                        </div>
+                    </div>
+
+                    <div class="preview-sections">
+                        <div class="preview-section">
+                            <h4>Contact Information</h4>
+                            <div class="preview-contact">
+                                <p id="preview-subadmin-contact">Email: subadmin@domain.com | Phone: +91-12345-67890</p>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Administrative Information</h4>
+                            <div class="preview-admin-info">
+                                <div class="admin-item">
+                                    <span class="admin-label">Admin ID:</span>
+                                    <span class="admin-value" id="preview-admin-id">SUB001</span>
+                                </div>
+                                <div class="admin-item">
+                                    <span class="admin-label">Assigned Region:</span>
+                                    <span class="admin-value" id="preview-assigned-region">Jaipur District</span>
+                                </div>
+                                <div class="admin-item">
+                                    <span class="admin-label">Joining Date:</span>
+                                    <span class="admin-value" id="preview-joining-date">Jan 15, 2023</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Permissions</h4>
+                            <div class="preview-permissions">
+                                <div class="permissions-summary">
+                                    <span class="permissions-count" id="total-permissions">0</span>
+                                    <span class="permissions-label">permissions granted</span>
+                                </div>
+                                <div class="permissions-list" id="preview-permissions-list">
+                                    <!-- Permissions will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-section">
+                            <h4>Account Settings</h4>
+                            <div class="preview-settings">
+                                <div class="setting-item">
+                                    <span class="setting-label">Welcome Email:</span>
+                                    <span class="setting-value" id="preview-welcome-email">Yes</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Password Change Required:</span>
+                                    <span class="setting-value" id="preview-password-change">Yes</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Two-Factor Auth:</span>
+                                    <span class="setting-value" id="preview-two-factor">No</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-actions">
+                    <button class="btn btn-secondary close-preview">Close Preview</button>
+                    <button class="btn btn-primary create-from-preview">Create Sub-Admin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/offline.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/add-subadmin.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>
