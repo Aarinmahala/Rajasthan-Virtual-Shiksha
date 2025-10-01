@@ -1,6 +1,6 @@
 # Rajasthan Virtual Shiksha - E-Classroom PWA
 
-![Rajasthan Logo](assets/images/rajasthan-logo.png)
+
 
 ## 📚 Project Overview
 
