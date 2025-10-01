@@ -218,6 +218,17 @@ The application employs sophisticated offline strategies:
 | Digital literacy barriers | Intuitive, accessible user interface design |
 | Educational continuity during disruptions | Always-available offline content |
 
+## 📲 Download App
+
+<div align="center">
+  <a href="https://drive.google.com/file/d/1y_oRB_9VCboWDkFTyLEBAH66V6N6zZop/view?usp=sharing">
+    <img src="https://img.icons8.com/color/96/000000/apk.png" alt="APK Download" width="80"/>
+    <br/>
+    <strong>Download Rajasthan Virtual Shiksha APK</strong>
+  </a>
+  <p>Click the icon above to download the Android application package</p>
+</div>
+
 ## 🚧 Future Development Roadmap
 
 1. **Phase 1**: Core functionality and offline capabilities (Current)
